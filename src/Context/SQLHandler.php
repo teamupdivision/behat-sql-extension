@@ -86,6 +86,11 @@ class SQLHandler implements Context, Interfaces\SQLHandlerInterface
     protected $queryParams;
 
     /**
+     * @var Interfaces\SQLBuilderInterface
+     */
+    private $sqlBuilder;
+
+    /**
      * Construct the object.
      *
      * @param Interfaces\DBManagerInterface       $dbManager
