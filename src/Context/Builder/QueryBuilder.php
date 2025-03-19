@@ -10,6 +10,11 @@ use Genesis\SQLExtension\Context\Representations;
 abstract class QueryBuilder extends Builder
 {
     /**
+     * @var Representations\Query
+     */
+    protected $query;
+
+    /**
      * @param Representations\QueryParams $queryParams The query params.
      */
     public function __construct(Representations\QueryParams $queryParams)

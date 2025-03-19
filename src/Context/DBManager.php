@@ -44,6 +44,11 @@ class DBManager implements Interfaces\DBManagerInterface
     private $factory;
 
     /**
+     * @var DatabaseProviderFactoryInterface
+     */
+    private $providerFactory;
+
+    /**
      * @param DatabaseProviderFactoryInterface $dbProviderFactory
      * @param array                            $params
      */
