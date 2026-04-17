@@ -2,7 +2,19 @@
     "name": "teamupdivision/behat-sql-extension",
     "type": "behat-extension",
     "description": "SQL/PDO extension that facilitates fixture data creation on the fly for Behat. Forked from genesis/behat-sql-extension",
-    "keywords": ["web", "test", "browser", "gui", "bdd", "behaviour", "testing", "test", "integration", "fixture", "PDO"],
+    "keywords": [
+        "web",
+        "test",
+        "browser",
+        "gui",
+        "bdd",
+        "behaviour",
+        "testing",
+        "test",
+        "integration",
+        "fixture",
+        "PDO"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +23,7 @@
         }
     ],
     "require": {
-        "php": "~5.5|~7.0|~8.0|~8.1|~8.2",
+        "php": "~5.5|~7.0|~8.0|~8.1|~8.2|~8.4",
         "ext-pdo": "*",
         "behat/behat": "~3.0"
     },
@@ -22,7 +34,7 @@
         "psr-4": {
             "Genesis\\SQLExtension\\": "src/",
             "Genesis\\SQLExtension\\Tests\\": "tests/"
-         }
+        }
     },
     "suggest": {
         "genesis/sql-data-mods": "Extends behat-sql-extension to provide a powerful and simple framework to manage your data modules.",
