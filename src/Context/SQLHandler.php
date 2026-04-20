@@ -76,11 +76,6 @@ class SQLHandler implements Context, Interfaces\SQLHandlerInterface
     private $keyStore;
 
     /**
-     * Holds the history of commands executed.
-     */
-    private $sqlHistory;
-
-    /**
      * @var Representations\SQLCommand.
      */
     protected $queryParams;
@@ -96,18 +91,15 @@ class SQLHandler implements Context, Interfaces\SQLHandlerInterface
      * @param Interfaces\DBManagerInterface       $dbManager
      * @param Interfaces\SQLBuilderInterface      $sqlBuilder
      * @param Interfaces\KeyStoreInterface        $keyStore
-     * @param Interfaces\SQLHistoryInterface|null $sqlHistory
      */
     public function __construct(
         Interfaces\DBManagerInterface $dbManager,
         Interfaces\SQLBuilderInterface $sqlBuilder,
         Interfaces\KeyStoreInterface $keyStore,
-        Interfaces\SQLHistoryInterface $sqlHistory = null
     ) {
         $this->dbManager = $dbManager;
         $this->keyStore = $keyStore;
         $this->sqlBuilder = $sqlBuilder;
-        $this->sqlHistory = $sqlHistory;
 
         $this->sqlBuilder->setDatabaseProvider($this->dbManager->getDatabaseProvider());
     }
@@ -684,13 +676,13 @@ class SQLHandler implements Context, Interfaces\SQLHandlerInterface
                 $schema = null;
                 $table = $result[0];
                 break;
-            // Database and table name;
+                // Database and table name;
             case 2:
                 $dbname = $this->getParams()['DBPREFIX'] . $result[0];
                 $schema = null;
                 $table = $result[1];
                 break;
-            // Scheme provided as well.
+                // Scheme provided as well.
             case 3:
                 $dbname = $this->getParams()['DBPREFIX'] . $result[0];
                 $schema = $result[1];
