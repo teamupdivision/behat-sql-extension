@@ -86,20 +86,28 @@ class SQLHandler implements Context, Interfaces\SQLHandlerInterface
     private $sqlBuilder;
 
     /**
+     * Holds the history of commands executed.
+     */
+    private $sqlHistory;
+
+    /**
      * Construct the object.
      *
      * @param Interfaces\DBManagerInterface       $dbManager
      * @param Interfaces\SQLBuilderInterface      $sqlBuilder
      * @param Interfaces\KeyStoreInterface        $keyStore
+     * @param Interfaces\SQLHistoryInterface|null $sqlHistory
      */
     public function __construct(
         Interfaces\DBManagerInterface $dbManager,
         Interfaces\SQLBuilderInterface $sqlBuilder,
         Interfaces\KeyStoreInterface $keyStore,
+        ?Interfaces\SQLHistoryInterface $sqlHistory = null
     ) {
         $this->dbManager = $dbManager;
         $this->keyStore = $keyStore;
         $this->sqlBuilder = $sqlBuilder;
+        $this->sqlHistory = $sqlHistory;
 
         $this->sqlBuilder->setDatabaseProvider($this->dbManager->getDatabaseProvider());
     }
