@@ -10,7 +10,7 @@ class KeywordNotFoundException extends Exception
      * @param string $keyword The keyword not found.
      * @param array $allKeywords All keywords available in store.
      */
-    public function __construct($keyword = null, array $allKeywords = null)
+    public function __construct($keyword = null, ?array $allKeywords = null)
     {
         if (! $keyword) {
             parent::__construct('No keywords found.');

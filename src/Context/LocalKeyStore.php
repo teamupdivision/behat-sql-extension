@@ -88,7 +88,7 @@ class LocalKeyStore implements Interfaces\KeyStoreInterface
      *
      * @return string
      */
-    public function parseKeywordsInString($string, callable $closure = null)
+    public function parseKeywordsInString($string, ?callable $closure = null)
     {
         $matches = [];
 

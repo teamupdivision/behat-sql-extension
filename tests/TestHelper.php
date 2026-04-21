@@ -155,7 +155,7 @@ class TestHelper extends PHPUnit_Framework_TestCase
      * @param array $with
      * @param mixed $return This will return the string.
      */
-    protected function mockDependency($dependency, $method, array $with = null, $return = true)
+    protected function mockDependency($dependency, $method, ?array $with = null, $return = true)
     {
         if (! in_array($dependency, array_keys($this->dependencies))) {
             throw new Exception(sprintf('Dependency "%s" not found, available deps are: %s', $dependency, print_r(array_keys($this->dependencies), true)));
